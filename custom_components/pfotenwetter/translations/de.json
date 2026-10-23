@@ -1,0 +1,68 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "PfotenWetter verbinden",
+        "description": "Öffne PfotenWetter auf deinem Telefon, geh zu Einstellungen → Home Assistant und tippe auf „Code erzeugen“. Gib die sechs Zeichen hier ein. Der Code gilt zehn Minuten.",
+        "data": { "code": "Code" },
+        "data_description": { "code": "Sechs Zeichen aus der App, etwa ABC-DEF." }
+      },
+      "reauth_confirm": {
+        "title": "PfotenWetter neu verbinden",
+        "description": "Die Verbindung wurde in der App getrennt oder durch eine neue ersetzt. Erzeuge in der App unter Einstellungen → Home Assistant einen neuen Code und gib ihn hier ein.",
+        "data": { "code": "Code" },
+        "data_description": { "code": "Sechs Zeichen aus der App, etwa ABC-DEF." }
+      }
+    },
+    "error": {
+      "code_ungueltig": "Dieser Code ist unbekannt, abgelaufen oder schon benutzt. Erzeuge in der App einen neuen.",
+      "gebremst": "Zu viele Versuche. Bitte später noch einmal.",
+      "nicht_erreichbar": "Der PfotenWetter-Server war nicht erreichbar.",
+      "unknown": "Unerwarteter Fehler."
+    },
+    "abort": {
+      "already_configured": "Dieses Telefon ist schon verbunden. Die Verbindung wurde erneuert.",
+      "reauth_successful": "Wieder verbunden.",
+      "anderes_telefon": "Dieser Code stammt von einem anderen Telefon als die bisherige Verbindung. Entferne die Integration und füge sie neu hinzu, um das Telefon zu wechseln."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Ort",
+        "description": "Wetter, Gassi-Ampel und Warnungen gelten für diese Zone. Ihre Koordinaten gehen an den PfotenWetter-Server und werden dort nicht gespeichert.",
+        "data": { "zone": "Zone" }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "gassi_ampel": {
+        "name": "Gassi-Ampel",
+        "state": { "gruen": "Grün", "gelb": "Gelb", "rot": "Rot" }
+      },
+      "pfotenindex": {
+        "name": "Pfotenindex",
+        "state": { "gruen": "Grün", "gelb": "Gelb", "rot": "Rot", "tiefrot": "Tiefrot" }
+      },
+      "temperatur": { "name": "Temperatur" },
+      "gefuehlte_temperatur": { "name": "Gefühlte Temperatur" },
+      "tiefstwert_heute": { "name": "Tiefstwert heute" },
+      "hoechstwert_heute": { "name": "Höchstwert heute" },
+      "regen_beginnt_in": { "name": "Regen beginnt in" },
+      "regen_endet_in": { "name": "Regen endet in" },
+      "niederschlagsrate": { "name": "Niederschlagsrate" },
+      "warnungen": { "name": "Amtliche Warnungen", "unit_of_measurement": "Warnungen" },
+      "hoechste_warnstufe": { "name": "Höchste Warnstufe" }
+    },
+    "binary_sensor": {
+      "regen_jetzt": { "name": "Regen jetzt" },
+      "erweiterte_funktionen": { "name": "Erweiterte Funktionen" }
+    }
+  },
+  "exceptions": {
+    "kopplung_ungueltig": { "message": "Die Verbindung zur App gilt nicht mehr. Bitte gib einen neuen Code ein." },
+    "gebremst": { "message": "Der PfotenWetter-Server bittet, mit der nächsten Anfrage zu warten." },
+    "nicht_erreichbar": { "message": "Der PfotenWetter-Server war nicht erreichbar: {fehler}" }
+  }
+}

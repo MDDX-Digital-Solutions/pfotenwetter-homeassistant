@@ -1,0 +1,68 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect PawWeather",
+        "description": "Open the PawWeather app on your phone, go to Settings → Home Assistant and tap “Create code”. Enter the six characters here. The code is valid for ten minutes.",
+        "data": { "code": "Code" },
+        "data_description": { "code": "Six characters from the app, e.g. ABC-DEF." }
+      },
+      "reauth_confirm": {
+        "title": "Connect PawWeather again",
+        "description": "The connection was removed in the app or replaced by a new one. Create a new code in the app under Settings → Home Assistant and enter it here.",
+        "data": { "code": "Code" },
+        "data_description": { "code": "Six characters from the app, e.g. ABC-DEF." }
+      }
+    },
+    "error": {
+      "code_ungueltig": "This code is unknown, expired or has already been used. Create a new one in the app.",
+      "gebremst": "Too many attempts. Please try again later.",
+      "nicht_erreichbar": "The PawWeather server could not be reached.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This phone is already connected. The connection has been renewed.",
+      "reauth_successful": "Connected again.",
+      "anderes_telefon": "This code comes from a different phone than the original connection. Remove the integration and add it again to switch phones."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Location",
+        "description": "Weather, walk light and warnings are fetched for this zone. Its coordinates are sent to the PawWeather server and are not stored there.",
+        "data": { "zone": "Zone" }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "gassi_ampel": {
+        "name": "Walk light",
+        "state": { "gruen": "Green", "gelb": "Yellow", "rot": "Red" }
+      },
+      "pfotenindex": {
+        "name": "Paw index",
+        "state": { "gruen": "Green", "gelb": "Yellow", "rot": "Red", "tiefrot": "Deep red" }
+      },
+      "temperatur": { "name": "Temperature" },
+      "gefuehlte_temperatur": { "name": "Feels like" },
+      "tiefstwert_heute": { "name": "Low today" },
+      "hoechstwert_heute": { "name": "High today" },
+      "regen_beginnt_in": { "name": "Rain starts in" },
+      "regen_endet_in": { "name": "Rain ends in" },
+      "niederschlagsrate": { "name": "Precipitation rate" },
+      "warnungen": { "name": "Official warnings", "unit_of_measurement": "warnings" },
+      "hoechste_warnstufe": { "name": "Highest warning level" }
+    },
+    "binary_sensor": {
+      "regen_jetzt": { "name": "Raining now" },
+      "erweiterte_funktionen": { "name": "Extended features" }
+    }
+  },
+  "exceptions": {
+    "kopplung_ungueltig": { "message": "The connection to the app is no longer valid. Please enter a new code." },
+    "gebremst": { "message": "The PawWeather server asks to wait before the next request." },
+    "nicht_erreichbar": { "message": "The PawWeather server could not be reached: {fehler}" }
+  }
+}

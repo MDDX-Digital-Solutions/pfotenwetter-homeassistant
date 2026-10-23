@@ -1,0 +1,18 @@
+{
+  "entity": {
+    "sensor": {
+      "gassi_ampel": {
+        "default": "mdi:dog-side",
+        "state": { "gruen": "mdi:dog-side", "gelb": "mdi:dog-side", "rot": "mdi:dog-side-off" }
+      },
+      "pfotenindex": { "default": "mdi:paw" },
+      "regen_beginnt_in": { "default": "mdi:weather-rainy" },
+      "regen_endet_in": { "default": "mdi:weather-partly-rainy" },
+      "warnungen": { "default": "mdi:alert" },
+      "hoechste_warnstufe": { "default": "mdi:alert-octagon" }
+    },
+    "binary_sensor": {
+      "erweiterte_funktionen": { "default": "mdi:star-circle" }
+    }
+  }
+}
