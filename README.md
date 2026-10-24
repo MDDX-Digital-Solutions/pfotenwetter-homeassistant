@@ -58,6 +58,12 @@ Without a subscription the walk light is calculated for an average dog; with
 extended features it uses your dogs from the app. Coordinates of the chosen
 zone are sent with each request and are not stored.
 
+## Lizenz / License
+
+Apache License 2.0, siehe [LICENSE](LICENSE). Name, Logo und App-Symbol von
+PfotenWetter / PawWeather sind ausgenommen, siehe [NOTICE](NOTICE).
+The name, logo and app icon are not covered by the license, see NOTICE.
+
 ## Entwicklung
 
 ```bash
